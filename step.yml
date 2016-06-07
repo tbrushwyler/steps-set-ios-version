@@ -43,3 +43,10 @@ inputs:
       description: |
         CFBundleShortVersionString e.g.: 1.0
       is_required: true
+outputs:
+  - APP_VERSION:
+    opts:
+      title: Version (CFBundleVersion from Info.plist)
+  - APP_BUILD:
+    opts:
+      title: Build (CFBundleShortVersionString from Info.plist)

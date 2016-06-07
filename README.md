@@ -15,6 +15,9 @@ added to your `.bitrise.secrets.yml` file!*
 
 ### Change log
 
+Version 1.0.2
+* Step now returns values.
+
 Version 1.0.1
 * Bugfix and first step share to Bitrise.
 
@@ -25,3 +28,4 @@ Version 1.0.0
 
 Thanks to Bitrise team for this awesome service / prompt support!
 Thanks to [Teference](https://github.com/teference/steps-set-ios-bundle-identifier) for source
+Thanks to [Tadija](https://github.com/tadija/bitrise-step-xcode-project-info) for source

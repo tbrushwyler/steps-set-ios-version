@@ -57,4 +57,7 @@ echo " (i) Replaced Bundle Version: $REPLACED_BUNDLE_VERSION"
 REPLACED_BUNDLE_SHORT_VERSION="$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "${info_plist_file}")"
 echo " (i) Replaced Bundle Short Version String: $REPLACED_BUNDLE_SHORT_VERSION"
 
+envman add --key APP_VERSION --value "${REPLACED_BUNDLE_VERSION}"
+envman add --key APP_BUILD --value "${REPLACED_BUNDLE_SHORT_VERSION}"
+
 # ==> Bundler version patched in Info.plist file for iOS project
