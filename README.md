@@ -1,6 +1,3 @@
-# steps-set-ios-version
-Thanks to 
-
 ## Set iOS Info.plist - Bundle Version and Bundle Short Version String ([BITRISE](https://www.bitrise.io))
 
 Sets the Bundle Version and Bundle Short Version String to the specified value, in the target Info.plist file for the next build.
