@@ -15,8 +15,11 @@ added to your `.bitrise.secrets.yml` file!*
 
 ### Change log
 
+Version 1.0.1
+* Bugfix and first step share to Bitrise.
+
 Version 1.0.0
-* Initial commit and first step share to Bitrise.
+* Initial commit.
 
 ### Credits
 
