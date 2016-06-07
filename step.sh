@@ -2,7 +2,9 @@
 
 # exit if a command fails
 set -e
-
+echo " (i) Provided Info.plist file path: ${info_plist_file}"
+echo " (i) Provided Bundle Version: ${bundle_version}"
+echo " (i) Provided Bundle Short Version String: ${bundle_version_short}"
 #
 # Required parameters
 if [ -z "${info_plist_file}" ] ; then
@@ -35,7 +37,7 @@ echo " (i) Provided Bundle Short Version String: ${bundle_version_short}"
 # --- Main:
 
 # verbose / debug print commands
-set -v
+#set -v
 
 # ---- Set Info.plist Bundle version:
 echo ""

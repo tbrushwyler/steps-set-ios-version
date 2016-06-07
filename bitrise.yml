@@ -4,8 +4,8 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 app:
   envs:
   - info_plist_file: "Info.plist"
-  - bundle_version: "ru.boomik.app"
-  - bundle_version_short: "$BITRISE_BUILD_NUMBER"
+  - bundle_version: "1.0.0"
+  - bundle_version_short: "2"
 
 workflows:
   test:
@@ -25,8 +25,8 @@ workflows:
         run_if: true
         inputs:
         - info_plist_file: "Info.plist"
-        - bundle_version: "1.$BITRISE_BUILD_NUMBER"
-        - bundle_version_short: "$BITRISE_BUILD_NUMBER"
+        - bundle_version: "1.0.0"
+        - bundle_version_short: "2"
 
   # ----------------------------------------------------------------
   # --- workflows to Share this step into a Step Library
