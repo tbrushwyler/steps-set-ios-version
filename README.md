@@ -15,8 +15,13 @@ added to your `.bitrise.secrets.yml` file!*
 
 ### Change log
 
-Version 1.0.2
-* Step now returns values.
+Version 1.1.1
+* Fix append version config bug.
+
+Version 1.1.0
+* Fixes
+* Append Version
+* Short Version increment
 
 Version 1.0.1
 * Bugfix and first step share to Bitrise.
