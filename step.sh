@@ -58,7 +58,7 @@ echo " (i) Original Bundle Version: $ORIGINAL_BUNDLE_VERSION"
 ORIGINAL_BUNDLE_SHORT_VERSION="$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "${info_plist_file}")"
 echo " (i) Original Bundle Short Version String: $ORIGINAL_BUNDLE_SHORT_VERSION"
 
-if [ "${append_version}" == "yes" ]; then
+if [ "${append_version}" == "true" ]; then
 	echo " (i) Need append version"
 	bundle_version=${ORIGINAL_BUNDLE_VERSION}${bundle_version}
 fi

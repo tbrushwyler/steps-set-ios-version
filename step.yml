@@ -48,7 +48,7 @@ inputs:
       title: "Bundle Short Version String Offset"
       description: |
         This offset will be added to `Short Version` input's value. If this set - Offset and Short Version must be integer!.
-  - append_version: "no"
+  - append_version: "false"
     opts:
       title: "Append Version"
       summary: "It appends to the current CFBundleVersion. e.g. Current version in Info.plist is '1.0.'. After step will be '1.0.YOU_ENTERED_VERSION NAME'"
