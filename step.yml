@@ -36,30 +36,7 @@ inputs:
       description: |
         CFBundleVersion e.g.: 1.0.0
       is_required: true
-  - bundle_version_short:
-    opts:
-      title: "Bundle Short Version String to set"
-      summary: "Set the :CFBundleShortVersionString to a specified value. Should be string."
-      description: |
-        CFBundleShortVersionString e.g.: 1.0
-      is_required: true
-  - version_short_offset:
-    opts:
-      title: "Bundle Short Version String Offset"
-      description: |
-        This offset will be added to `Short Version` input's value. If this set - Offset and Short Version must be integer!.
-  - append_version: "false"
-    opts:
-      title: "Append Version"
-      summary: "It appends to the current CFBundleVersion. e.g. Current version in Info.plist is '1.0.'. After step will be '1.0.YOU_ENTERED_VERSION NAME'"
-      is_required: true
-      value_options:
-      - "true"
-      - "false"
 outputs:
   - APP_VERSION:
     opts:
       title: Version (CFBundleVersion from Info.plist)
-  - APP_BUILD:
-    opts:
-      title: Build (CFBundleShortVersionString from Info.plist)
