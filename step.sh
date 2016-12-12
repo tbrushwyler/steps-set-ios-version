@@ -13,21 +13,6 @@ if [ ! -f "${info_plist_file}" ] ; then
   exit 1
 fi
 
-if [ -z "${bundle_version}" ] ; then
-  echo " [!] No Bundle Version (bundle_version) specified!"
-  exit 1
-fi
-
-if [ -z "${bundle_version_short}" ] ; then
-  echo " [!] No Bundle Short Version String (bundle_version_short) specified!"
-  exit 1
-fi
-
-if [ -z "${append_version}" ] ; then
-  echo " [!] No append_version specified!"
-  exit 1
-fi
-
 # ---------------------
 # --- Configs:
 
@@ -47,32 +32,11 @@ echo ""
 echo ""
 echo " (i) Replacing version..."
 
-if [ ! -z "${version_short_offset}" ] ; then
-  echo " (i) Short Version offset: ${version_short_offset}"
-  
-  bundle_version_short=$((${bundle_version_short} + ${version_short_offset}))
-fi
-
-ORIGINAL_BUNDLE_VERSION="$(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "${info_plist_file}")"
-echo " (i) Original Bundle Version: $ORIGINAL_BUNDLE_VERSION"
-ORIGINAL_BUNDLE_SHORT_VERSION="$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "${info_plist_file}")"
-echo " (i) Original Bundle Short Version String: $ORIGINAL_BUNDLE_SHORT_VERSION"
-
-if [ "${append_version}" == "true" ]; then
-	echo " (i) Need append version"
-	bundle_version=${ORIGINAL_BUNDLE_VERSION}${bundle_version}
-fi
-
-
 /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${bundle_version}" "${info_plist_file}"
-/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${bundle_version_short}" "${info_plist_file}"
 
 REPLACED_BUNDLE_VERSION="$(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "${info_plist_file}")"
 echo " (i) Replaced Bundle Version: $REPLACED_BUNDLE_VERSION"
-REPLACED_BUNDLE_SHORT_VERSION="$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "${info_plist_file}")"
-echo " (i) Replaced Bundle Short Version String: $REPLACED_BUNDLE_SHORT_VERSION"
 
 envman add --key APP_VERSION --value "${REPLACED_BUNDLE_VERSION}"
-envman add --key APP_BUILD --value "${REPLACED_BUNDLE_SHORT_VERSION}"
 
 # ==> Bundler version patched in Info.plist file for iOS project
